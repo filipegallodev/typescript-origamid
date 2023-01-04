@@ -3,13 +3,19 @@ type NumberOrString = string | number;
 let total: NumberOrString = 20;
 total = "50";
 
-type Produto = {
+interface InterfaceProduto {
+  nome: string;
+  preco: number;
+  teclado: boolean;
+}
+
+type TypeProduto = {
   nome: string;
   preco: number;
   teclado: boolean;
 };
 
-function preencherDados(dados: Produto) {
+function preencherDados(dados: InterfaceProduto) {
   document.body.innerHTML += `
     <div>
       <h2>${dados.nome}</h2>
@@ -19,7 +25,7 @@ function preencherDados(dados: Produto) {
   `;
 }
 
-const computador: Produto = {
+const computador: InterfaceProduto = {
   nome: "Computador",
   preco: 2000,
   teclado: true,
