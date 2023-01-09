@@ -2,16 +2,10 @@
 // function somar(a: number, b: number, c?: number): number {
 //   return a + b + (c ? c : 0);
 // }
-function normalizar(valor) {
-    if (typeof valor === "string")
-        return valor.trim().toLowerCase();
-    return valor.map((item) => item.trim().toLowerCase());
+function arredondar(value) {
+    if (typeof value === "number")
+        return Math.ceil(value);
+    return String(Math.ceil(Number(value)));
 }
-console.log(normalizar(" Produto "));
-console.log(normalizar([" Banana", " UVA   "]));
-function $(seletor) {
-    return document.querySelector(seletor);
-}
-$("a");
-$("video");
-$(".item");
+console.log(arredondar("214.30"));
+console.log(arredondar(198.12));

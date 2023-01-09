@@ -45,24 +45,39 @@
 //   forma.perimetro(3);
 // }
 
-function normalizar(valor: string): string;
-function normalizar(valor: string[]): string[];
-function normalizar(valor: string | string[]): string | string[] {
-  if (typeof valor === "string") return valor.trim().toLowerCase();
+// function normalizar(valor: string): string;
+// function normalizar(valor: string[]): string[];
+// function normalizar(valor: string | string[]): string | string[] {
+//   if (typeof valor === "string") return valor.trim().toLowerCase();
 
-  return valor.map((item) => item.trim().toLowerCase());
+//   return valor.map((item) => item.trim().toLowerCase());
+// }
+
+// console.log(normalizar(" Produto "));
+// console.log(normalizar([" Banana", " UVA   "]));
+
+// function $(seletor: "a"): HTMLAnchorElement | null;
+// function $(seletor: "video"): HTMLVideoElement | null;
+// function $(seletor: string): Element | null;
+// function $(seletor: string): Element | null {
+//   return document.querySelector(seletor);
+// }
+
+// $("a");
+// $("video");
+// $(".item");
+
+// Crie uma função que arredonda um valor passado para cima.
+// A função pode receber string ou number.
+// A função deve retornar o mesmo tipo que ela receber.
+
+function arredondar(value: number): number;
+function arredondar(value: string): string;
+function arredondar(value: string | number): string | number {
+  if (typeof value === "number") return Math.ceil(value);
+
+  return String(Math.ceil(Number(value)));
 }
 
-console.log(normalizar(" Produto "));
-console.log(normalizar([" Banana", " UVA   "]));
-
-function $(seletor: "a"): HTMLAnchorElement | null;
-function $(seletor: "video"): HTMLVideoElement | null;
-function $(seletor: string): Element | null;
-function $(seletor: string): Element | null {
-  return document.querySelector(seletor);
-}
-
-$("a");
-$("video");
-$(".item");
+console.log(arredondar("214.30"));
+console.log(arredondar(198.12));
