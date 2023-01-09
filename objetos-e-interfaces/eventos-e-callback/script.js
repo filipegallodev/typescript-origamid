@@ -20,9 +20,37 @@
 //   console.log(this);
 // }
 // button?.addEventListener("click", handleClick);
-const button = document.querySelector("button");
-function handleClick(event) {
-    if (event.currentTarget instanceof HTMLElement)
-        console.log(event.currentTarget.innerText);
+// const button = document.querySelector("button");
+// function handleClick(event: MouseEvent) {
+//   if (event.currentTarget instanceof HTMLElement)
+//     console.log(event.currentTarget.innerText);
+// }
+// button?.addEventListener("click", handleClick);
+// Estado dos elementos
+// menu inativo:
+// class="" em nav
+// aria-expanded="false" em button
+// aria-label="Abrir Menu" em button
+// menu ativo:
+// class="active" em nav
+// aria-expanded="true" em button
+// aria-label="Fechar Menu" em button
+const mobileButton = document.querySelector("#btn-mobile");
+const nav = document.querySelector("#nav");
+function handleTouch(event) {
+    nav?.classList.toggle("active");
+    const button = event.target;
+    if (button instanceof HTMLButtonElement && nav) {
+        if (nav.classList.contains("active")) {
+            button.ariaExpanded = "true";
+            button.ariaLabel = "Fechar Menu";
+        }
+        else {
+            button.ariaExpanded = "false";
+            button.ariaLabel = "Abrir Menu";
+        }
+    }
 }
-button?.addEventListener("click", handleClick);
+if (mobileButton instanceof HTMLButtonElement) {
+    mobileButton?.addEventListener("pointerdown", handleTouch);
+}
