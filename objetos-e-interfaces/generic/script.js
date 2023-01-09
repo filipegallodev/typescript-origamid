@@ -18,14 +18,37 @@
 // }
 // console.log(notNull("André"));
 // console.log(notNull(200));
-function tipoDado(a) {
-    const resultado = {
-        dado: a,
-        tipo: typeof a,
-    };
-    console.log(resultado);
-    return resultado;
+// function tipoDado<T>(a: T): { dado: T; tipo: string } {
+//   const resultado = {
+//     dado: a,
+//     tipo: typeof a,
+//   };
+//   console.log(resultado);
+//   return resultado;
+// }
+// tipoDado("Teste");
+// tipoDado(true);
+// tipoDado(200);
+// function extractText<Tipo extends HTMLElement>(el: Tipo) {
+//   return { texto: el.innerText, el };
+// }
+// const link = document.querySelector("a");
+// if (link) {
+//   console.log(extractText(link));
+// }
+// function $<Tipo extends Element>(selector: string): Tipo | null {
+//   return document.querySelector(selector);
+// }
+// const link = $<HTMLAnchorElement>("a");
+// console.log(link);
+// const link = document.querySelector<HTMLAnchorElement>("a");
+// if (link instanceof HTMLAnchorElement) link?.href;
+async function getData(url) {
+    const response = await fetch(url);
+    return await response.json();
 }
-tipoDado("Teste");
-tipoDado(true);
-tipoDado(200);
+async function handleData() {
+    const notebook = await getData("https://api.origamid.dev/json/notebook.json");
+    console.log(notebook);
+}
+handleData();
