@@ -18,33 +18,45 @@
 //   preco: 2000,
 // });
 
-function handleClick1({
-  currentTarget,
-  pageX,
-}: {
-  currentTarget: EventTarget | null;
-  pageX: number;
-}) {
-  if (currentTarget instanceof HTMLElement) {
-    currentTarget.innerHTML = `<h1>Mouse click em X: ${pageX}</h1>`;
-  }
-  console.log(pageX);
+// function handleClick1({
+//   currentTarget,
+//   pageX,
+// }: {
+//   currentTarget: EventTarget | null;
+//   pageX: number;
+// }) {
+//   if (currentTarget instanceof HTMLElement) {
+//     currentTarget.innerHTML = `<h1>Mouse click em X: ${pageX}</h1>`;
+//   }
+//   console.log(pageX);
+// }
+
+// function handleClick2({ currentTarget, pageX }: MouseEvent) {
+//   if (currentTarget instanceof HTMLElement) {
+//     currentTarget.innerHTML = `<h1>Mouse click em X: ${pageX}</h1>`;
+//   }
+//   console.log(pageX);
+// }
+
+// document.documentElement.addEventListener("click", handleClick2);
+
+// function handleClick({ currentTarget }: { currentTarget: EventTarget | null }) {
+//   if (currentTarget instanceof HTMLElement) {
+//     currentTarget.innerHTML = `<h1>Mouse click em X: 1</h1>`;
+//   }
+// }
+
+// document.documentElement.addEventListener("click", handleClick);
+// document.documentElement.addEventListener("touchstart", handleClick);
+
+function comparar(tipo: "menor" | "maior", ...numeros: number[]) {
+  if (tipo === "menor") return Math.min(...numeros);
+
+  if (tipo === "maior") return Math.max(...numeros);
 }
 
-function handleClick2({ currentTarget, pageX }: MouseEvent) {
-  if (currentTarget instanceof HTMLElement) {
-    currentTarget.innerHTML = `<h1>Mouse click em X: ${pageX}</h1>`;
-  }
-  console.log(pageX);
-}
+const menor = comparar("menor", 4, 15, 5, 7, 20, 10, 6, 30, 3, 1);
+console.log(menor);
 
-document.documentElement.addEventListener("click", handleClick2);
-
-function handleClick({ currentTarget }: { currentTarget: EventTarget | null }) {
-  if (currentTarget instanceof HTMLElement) {
-    currentTarget.innerHTML = `<h1>Mouse click em X: 1</h1>`;
-  }
-}
-
-document.documentElement.addEventListener("click", handleClick);
-document.documentElement.addEventListener("touchstart", handleClick);
+const maior = comparar("maior", 4, 15, 5, 7, 20, 10, 6, 30, 3, 1);
+console.log(maior);
