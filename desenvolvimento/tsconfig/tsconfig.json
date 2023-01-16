@@ -18,7 +18,7 @@
     // // Remove os comentários
     "removeComments": true,
     // // Modo estrito (inclui outras opções)
-    // "strict": true,
+    "strict": true,
     // // [strict] É necessario indicar o tipo de dado dos que não são inferidos
     // "noImplicitAny": true,
     // // [strict] Adiciona "use strict" ao JavaScript
@@ -28,15 +28,15 @@
     // // [strict] Necessário declarar o this
     // "noImplicitThis": true,
     // // Indica a possibilidade de retorno undefined
-    // "noImplicitReturns": true,
+    "noImplicitReturns": true
     // // Indica parâmetros e variáveis que não foram utilizados
     // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
+    // "noUnusedParameters": true
     // // Diretórios dos arquivos compilados
     // "outDir": "dist"
-  }
+  },
   // // Compila o que estiver na pasta src
-  // "include": ["src"],
+  "include": ["src"],
   // // Não compila o que estiver na pasta node_modules
-  // "exclude": ["node_modules"]
+  "exclude": ["node_modules"]
 }
