@@ -24,7 +24,7 @@ declare global {
   interface Transacao {
     nome: string;
     id: number;
-    data: string;
+    data: Date;
     status: TransacaoStatus;
     email: string;
     moeda: string;
@@ -34,7 +34,9 @@ declare global {
   }
 }
 
-export default function normalizarTransacao(transacao: TransacaoAPI) {
+export default function normalizarTransacao(
+  transacao: TransacaoAPI
+): Transacao {
   return {
     nome: transacao.Nome,
     id: transacao.ID,
@@ -44,6 +46,6 @@ export default function normalizarTransacao(transacao: TransacaoAPI) {
     moeda: transacao["Valor (R$)"],
     valor: moedaParaNumero(transacao["Valor (R$)"]),
     pagamento: transacao["Forma de Pagamento"],
-    movo: Boolean(transacao["Cliente Novo"]),
+    novo: Boolean(transacao["Cliente Novo"]),
   };
 }

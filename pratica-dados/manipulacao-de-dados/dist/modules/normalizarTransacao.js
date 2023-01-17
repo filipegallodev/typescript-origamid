@@ -10,7 +10,7 @@ export default function normalizarTransacao(transacao) {
         moeda: transacao["Valor (R$)"],
         valor: moedaParaNumero(transacao["Valor (R$)"]),
         pagamento: transacao["Forma de Pagamento"],
-        movo: Boolean(transacao["Cliente Novo"]),
+        novo: Boolean(transacao["Cliente Novo"]),
     };
 }
 //# sourceMappingURL=normalizarTransacao.js.map

@@ -14,7 +14,7 @@ declare global {
     interface Transacao {
         nome: string;
         id: number;
-        data: string;
+        data: Date;
         status: TransacaoStatus;
         email: string;
         moeda: string;
@@ -23,14 +23,4 @@ declare global {
         novo: boolean;
     }
 }
-export default function normalizarTransacao(transacao: TransacaoAPI): {
-    nome: string;
-    id: number;
-    data: Date;
-    status: TransacaoStatus;
-    email: string;
-    moeda: string;
-    valor: number | null;
-    pagamento: TransacaoPagamento;
-    movo: boolean;
-};
+export default function normalizarTransacao(transacao: TransacaoAPI): Transacao;

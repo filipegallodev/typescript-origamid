@@ -12,8 +12,49 @@
       font-family: sans-serif;
       margin: 2rem;
     }
+
+    table {
+      border-spacing: 0;
+      text-align: left;
+    }
+
+    table td,
+    table th {
+      padding: 0.5rem 1rem;
+    }
+
+    table tr:nth-child(even) {
+      background-color: ghostwhite;
+    }
+
+    h2,
+    p {
+      margin-left: 1rem;
+    }
+
+    h2 {
+      border-top: 6px solid ghostwhite;
+      padding-top: 1rem;
+    }
+
+    div {
+      border-top: 3px solid ghostwhite;
+    }
   </style>
   <body>
+    <h2>Dados</h2>
+    <table id="transacoes">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Compra</th>
+          <th>Pagamento</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
     <script type="module" src="./dist/script.js"></script>
   </body>
 </html>
