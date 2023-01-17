@@ -1,4 +1,4 @@
-async function fetchData<T>(url: string): Promise<T | null> {
+export default async function fetchData<T>(url: string): Promise<T | null> {
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error("Erro: " + response.status);
@@ -8,5 +8,3 @@ async function fetchData<T>(url: string): Promise<T | null> {
     return null;
   }
 }
-
-export default fetchData;

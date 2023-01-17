@@ -1,4 +1,4 @@
-async function fetchData(url) {
+export default async function fetchData(url) {
     try {
         const response = await fetch(url);
         if (!response.ok)
@@ -11,5 +11,4 @@ async function fetchData(url) {
         return null;
     }
 }
-export default fetchData;
 //# sourceMappingURL=fetchData.js.map
