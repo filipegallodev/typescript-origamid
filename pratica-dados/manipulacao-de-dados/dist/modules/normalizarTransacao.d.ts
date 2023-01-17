@@ -30,7 +30,7 @@ export default function normalizarTransacao(transacao: TransacaoAPI): {
     status: TransacaoStatus;
     email: string;
     moeda: string;
-    valor: number;
+    valor: number | null;
     pagamento: TransacaoPagamento;
     movo: boolean;
 };
