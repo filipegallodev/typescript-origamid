@@ -9,6 +9,8 @@ export default class Slide {
     timeout: Timeout | null;
     pausedTimeout: Timeout | null;
     paused: boolean;
+    thumbItems: HTMLElement[] | null;
+    thumb: HTMLElement | null;
     constructor(container: Element, slides: Element[], controls: Element, time?: number);
     hide(el: Element): void;
     show(index: number): void;
@@ -19,5 +21,6 @@ export default class Slide {
     pause(): void;
     continue(): void;
     private addControls;
+    private addThumbItems;
     private init;
 }
