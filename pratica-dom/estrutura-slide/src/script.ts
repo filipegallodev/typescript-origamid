@@ -11,7 +11,4 @@ if (container && elements && elements.children.length > 0 && controls) {
     controls,
     3000
   );
-
-  slide.show(2);
-  console.log(slide.slide);
 }

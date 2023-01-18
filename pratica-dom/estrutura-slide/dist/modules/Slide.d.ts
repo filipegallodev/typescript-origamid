@@ -8,4 +8,8 @@ export default class Slide {
     constructor(container: Element, slides: Element[], controls: Element, time?: number);
     hide(el: Element): void;
     show(index: number): void;
+    prev(): void;
+    next(): void;
+    private addControls;
+    private init;
 }
