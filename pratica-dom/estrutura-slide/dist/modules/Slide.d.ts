@@ -12,6 +12,7 @@ export default class Slide {
     constructor(container: Element, slides: Element[], controls: Element, time?: number);
     hide(el: Element): void;
     show(index: number): void;
+    autoVideo(video: HTMLVideoElement): void;
     auto(time: number): void;
     prev(): void;
     next(): void;
